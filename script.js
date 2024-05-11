@@ -16,13 +16,10 @@ function updateTimeAndGreetings() {
     const seconds = now.getSeconds();
     const ampm = hours >= 12 ? 'PM' : 'AM';
 
-    // Format time
     const formattedTime = `${hours % 12}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds} ${ampm}`;
 
-    // Update time in navbar
     document.getElementById('real-time').innerText = formattedTime;
 
-    // Determine greetings based on time
     let greetings;
     if (hours < 12) {
         greetings = 'Good morning!';
@@ -32,14 +29,11 @@ function updateTimeAndGreetings() {
         greetings = 'Good evening!';
     }
 
-    // Update greetings in navbar
     document.getElementById('greetings').innerText = greetings;
 }
 
-// Call updateTimeAndGreetings every second
 setInterval(updateTimeAndGreetings, 1000);
 
-// Initialize updateTimeAndGreetings
 updateTimeAndGreetings();
 
 
